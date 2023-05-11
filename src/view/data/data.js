@@ -1,7 +1,5 @@
 export var product = [
-    { id: 1, name: 'OnePlus Nord CE 2 Lite 5G (Blue Tide, 6GB RAM, 128GB Storage)', sellRate: '18,999', MRPRate: '19,999', image: require('../img/img1.jpg'), color: 'Blue Tide' },
-    { id: 2, name: 'OnePlus 11R 5G (Galactic Silver, 8GB RAM, 128GB Storage)', sellRate: '39,999', MRPRate: '49,999', image: require('../img/img2.jpg'), color: 'Galactic Silver' },
-    { id: 3, name: 'OnePlus 11R 5G (Sonic Black, 16GB RAM, 256GB Storage)', sellRate: '39,999', MRPRate: '49,999', image: require('../img/img3.jpg'), color: 'Galactic Silver' },
-    { id: 4, name: 'OnePlus 11 5G (Titan Black, 16GB RAM, 256GB Storage)', sellRate: '39,999', MRPRate: '49,999', image: require('../img/img4.jpg'), color: 'Galactic Silver' },
+    { id: 1, name: 'Junior Suite', stars: '⭐⭐⭐⭐⭐', price: 'Starting Rate/Night/₹ 16,000 *', wifi: '🛌 3 Bed ‖ 🛀2 Bath ‖ 📶Wi-fi', image: require('../img/o-2.jpg'), h1: 'The richly decorated rooms offer air-conditioning, flat-screen satellite TV and seating area. Each room includes a mini-bar and a safety deposit box. The attached bathrooms are equipped with a bathtub, hairdryer and free toiletries.' },
+
 ]
 

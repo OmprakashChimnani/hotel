@@ -1,8 +1,55 @@
-
+import { handleSubmit, checkInDate, handleCheckInDateChange, checkOutDate, handleCheckOutDateChange, guests, handleGuestsChange, useState } from 'react';
 import { Container, Row, Col, Figure, Button, Nav, NavDropdown, Navbar, Carousel, Card, CardGroup, Placeholder, Form } from 'react-bootstrap';
 function About() {
+    // const [checkInDate, setCheckInDate] = useState('');
+    // const [checkOutDate, setCheckOutDate] = useState('');
+    // const [guests, setGuests] = useState('');
+
+    // const handleCheckInDateChange = (event) => {
+    //     setCheckInDate(event.target.value);
+    // };
+
+    // const handleCheckOutDateChange = (event) => {
+    //     setCheckOutDate(event.target.value);
+    // };
+
+    // const handleGuestsChange = (event) => {
+    //     setGuests(event.target.value);
+    // };
+
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     // Code to handle form submission
+    // };
     return (
         <Container>
+            <section className="hotel-availability-check">
+                <div className="container">
+                    <h2>Check Availability</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div className="row">
+                            <div className="col-md-4">
+                                <label htmlFor="check-in-date">Check-In Date:</label>
+                                <input type="date" id="check-in-date" value={checkInDate} onChange={handleCheckInDateChange} />
+                            </div>
+                            <div className="col-md-4">
+                                <label htmlFor="check-out-date">Check-Out Date:</label>
+                                <input type="date" id="check-out-date" value={checkOutDate} onChange={handleCheckOutDateChange} />
+                            </div>
+                            <div className="col-md-4">
+                                <label htmlFor="guests">Guests:</label>
+                                <select id="guests" value={guests} onChange={handleGuestsChange}>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" className="btn btn-primary">Check Availability</button>
+                    </form>
+                </div>
+            </section>
             <CardGroup>
                 <Card>
                     <Card.Img variant="top" src="img/d-1.jpg" />

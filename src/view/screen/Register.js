@@ -1,10 +1,14 @@
 import { Container, Row, Col, Button, Form, Card, CardGroup, Nav } from "react-bootstrap";
-import { useState } from "react";
+import { useState, handleInputChange } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Register() {
-
+    const [formData, setFormData] = useState({
+        phone: '',
+        checkInDate: '',
+        checkOutDate: ''
+    });
     const nav = useNavigate()
     // const [file, setFile] = useState("");
     // const [fileName, setFileName] = useState("")
@@ -12,7 +16,7 @@ function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [Number, setNumber] = useState('');
 
 
 
@@ -86,7 +90,7 @@ function Register() {
                             <small className="text-muted">Last updated 3 mins ago</small>
                         </Card.Footer>
                     </Card>
-                    <Card className='up' onClick={() => Nav('/Details')}>
+                    <Card className='up'>
                         <Card.Img variant="top" src="img/o-3.jpg" style={{ height: "420px" }} />
                         <Card.Body>
                             <Card.Title>Executive Suite
@@ -159,9 +163,19 @@ function Register() {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Enter password " value={password} required onChange={(d) => setPassword(d.target.value)} />
                             </Form.Group>
-                            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="Password" label="Enter Password" value={password}  onChange={(d)=>setPassword(d.target.value)} />
-      </Form.Group> */}
+                            <Form.Group className="mb-3" controlId="formBasicphone">
+                                <Form.Label>Phone</Form.Label>
+                                <Form.Control type="phone" placeholder="Enter Phone No. " value={Number} required onChange={(d) => setNumber(d.target.value)} />
+                            </Form.Group>
+
+                            <label>
+                                Check-In Date:
+                                <input type="date" name="checkInDate" value={formData.checkInDate} onChange={handleInputChange} />
+                            </label>
+                            <label>
+                                Check-Out Date:
+                                <input type="date" name="checkOutDate" value={formData.checkOutDate} onChange={handleInputChange} />
+                            </label>
                             <Button variant="primary" onClick={submitregister}>
                                 Submit
                             </Button>
